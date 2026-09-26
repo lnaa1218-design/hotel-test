@@ -1,28 +1,510 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premier Syla</title>
+
+    <title>AI Solutions for Modern Businesses</title>
+
+    <meta name="description" content="Simple AI solutions that help businesses improve customer service, save time and respond to customers faster.">
+
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
-        .card { background: white; padding: 40px; border-radius: 8px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h1 { color: #222; }
-        p { color: #555; line-height: 1.6; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            width: 100%;
+            border-bottom: 1px solid #eeeeee;
+            background: #ffffff;
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 22px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #172033;
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 28px;
+            text-decoration: none;
+            color: #4d5668;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #1769e0;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: linear-gradient(135deg, #f5f9ff, #ffffff);
+            padding: 100px 25px 110px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            color: #101828;
+        }
+
+        .hero h1 span {
+            color: #1769e0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #596579;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #1769e0;
+            color: white;
+            padding: 14px 27px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #1256ba;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 80px 25px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: #101828;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px;
+            color: #667085;
+        }
+
+        /* SERVICES */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            border: 1px solid #e6e9ef;
+            border-radius: 12px;
+            padding: 30px;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+        }
+
+        .service-icon {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #667085;
+            font-size: 15px;
+        }
+
+        /* HOW IT WORKS */
+
+        .how {
+            background: #f7f9fc;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .number {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #1769e0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #667085;
+            font-size: 15px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            background: #101828;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #c8ced8;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0b111c;
+            color: #98a2b3;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .services,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .nav {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
-<body>
-    <div class="card">
-        <h1>Welcome to Premier Syla</h1>
-        <p>Your luxury stay in Hamburg. Ask our digital assistant in the bottom right corner any questions regarding parking, check-in times, or hotel amenities.</p>
-    </div>
 
-    <!-- <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="-G_rVKsrtuWttXkv4WC-T";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script> -->
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <div class="nav">
+
+            <a href="#" class="logo">
+                Your AI Company
+            </a>
+
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#how">How It Works</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Smarter Customer Service<br>
+                <span>Powered by AI.</span>
+            </h1>
+
+            <p>
+                We help small and medium-sized businesses use practical AI
+                solutions to answer customer questions, save time and improve
+                their customer service.
+            </p>
+
+            <a href="#contact" class="button">
+                Let's Talk
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Simple AI. Real Business Value.
+            </h2>
+
+            <p class="section-intro">
+                Practical AI solutions designed around the needs of your business —
+                without unnecessary complexity.
+            </p>
+
+
+            <div class="services">
+
+                <div class="service-card">
+
+                    <div class="service-icon">💬</div>
+
+                    <h3>AI Chatbots</h3>
+
+                    <p>
+                        Give your customers instant answers to common questions
+                        about your products, services and business.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">⚡</div>
+
+                    <h3>Save Time</h3>
+
+                    <p>
+                        Automate repetitive customer questions so your team can
+                        focus on more important tasks.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">🤝</div>
+
+                    <h3>Built for Your Business</h3>
+
+                    <p>
+                        AI solutions configured around your company's information,
+                        services and customer needs.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how" id="how">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                How It Works
+            </h2>
+
+            <p class="section-intro">
+                Getting started doesn't have to be complicated.
+            </p>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="number">1</div>
+
+                    <h3>Tell Us About Your Business</h3>
+
+                    <p>
+                        We learn about your services, your customers and the
+                        questions they ask most often.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="number">2</div>
+
+                    <h3>Build Your AI Solution</h3>
+
+                    <p>
+                        We configure the AI using the information your business
+                        wants customers to have access to.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="number">3</div>
+
+                    <h3>Go Live</h3>
+
+                    <p>
+                        Your AI assistant becomes available to customers directly
+                        on your website.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta" id="contact">
+
+        <div class="container">
+
+            <h2>Ready to explore AI for your business?</h2>
+
+            <p>
+                Let's find a simple solution that fits your business.
+            </p>
+
+            <a href="mailto:hello@example.com" class="button">
+                Contact Us
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Your AI Company. All rights reserved.
+
+    </footer>
+
+
+    <!-- CHATBASE AI CHATBOT -->
+
     <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="-G_rVKsrtuWttXkv4WC-T";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+    (function(){
+        if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+            window.chatbase = (...arguments) => {
+                if(!window.chatbase.q){
+                    window.chatbase.q = []
+                }
+                window.chatbase.q.push(arguments)
+            };
+
+            window.chatbase = new Proxy(window.chatbase,{
+                get(target,prop){
+                    if(prop === "q"){
+                        return target.q
+                    }
+                    return (...args) => target(prop,...args)
+                }
+            })
+        }
+
+        const onLoad = function(){
+            const script = document.createElement("script");
+
+            script.src = "https://www.chatbase.co/embed.min.js";
+            script.id = "-G_rVKsrtuWttXkv4WC-T";
+            script.domain = "www.chatbase.co";
+
+            document.body.appendChild(script)
+        };
+
+        if(document.readyState === "complete"){
+            onLoad()
+        } else {
+            window.addEventListener("load",onLoad)
+        }
+
+    })();
+    </script>
 
 </body>
 </html>
+```
